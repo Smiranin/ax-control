@@ -1,0 +1,10 @@
+<div (focusin)="onFocusIn()" (focusout)="onFocusOut()" class="ax-control">
+  <label class="ax-control__label">{{title}}</label>
+  <ng-content></ng-content>
+
+  <span *ngIf="ngModelInstance.invalid" class="error-icon"></span>
+  <span *ngIf="showResetIcon && ngModelInstance.valid && ngModelInstance.value.length"
+        (mousedown)="resetField()"
+        class="reset-icon">
+  </span>
+</div>
